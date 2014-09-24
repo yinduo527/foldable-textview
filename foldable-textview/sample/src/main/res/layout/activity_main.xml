@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -13,6 +14,8 @@
         android:layout_height="wrap_content"
         android:maxLines="2"
         android:ellipsize="end"
+        app:foldingDrawableBottom="@drawable/ic_arrow_down"
+        app:unfoldingDrawableBottom="@drawable/ic_arrow_up"
         android:text="@string/hello_world" />
 
 </RelativeLayout>
