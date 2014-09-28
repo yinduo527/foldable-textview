@@ -1,7 +1,7 @@
 foldable-textview
 =================
 
-a foldable textview that can show parts of the content text end with "..." and be clicked to show complete text
+an android foldable textview that can show parts of the content text end with "..." and be clicked to show complete text
 
 A long text can be displayed like this:
 ----
