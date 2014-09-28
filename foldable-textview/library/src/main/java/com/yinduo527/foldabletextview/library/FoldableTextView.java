@@ -14,12 +14,25 @@ import android.widget.TextView;
  */
 public class FoldableTextView extends TextView implements View.OnClickListener {
 
-
+    /**
+     * The max number of lines when the text is folding.
+     */
     private int maxLines = -1;
 
+    /**
+     * if the view is ellipsized or not
+     * true for yes and false for no
+     */
     private boolean isEllipsized = false;
 
+    /**
+     * The bottom icon id when the view is ellipsized.
+     */
     private int foldingDrawableBottom = 0;
+
+    /**
+     * The bottom icon id when the view is not ellipsized.
+     */
     private int unfoldingDrawableBottom = 0;
 
     public FoldableTextView(Context context) {
@@ -43,11 +56,14 @@ public class FoldableTextView extends TextView implements View.OnClickListener {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        // initialize the maxLines and isEllipsized
         if (maxLines == -1) {
             Layout l = getLayout();
             if (l != null) {
                 maxLines = l.getLineCount();
                 if (maxLines > 0) {
+                    // if the view is ellipsized, show the bottom icon and set OnClickListener
                     if (l.getEllipsisCount(maxLines - 1) > 0) {
                         isEllipsized = true;
                         setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, foldingDrawableBottom);
